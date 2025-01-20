@@ -1,4 +1,4 @@
-describe('Logout Feature', () => {
+describe('Feature Logout', () => {
   beforeEach(() => {
     cy.visit('https://app.gothru.co')
     cy.get('input[placeholder="Enter email"]').type('testergothru@gmail.com') 
