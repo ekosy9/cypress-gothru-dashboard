@@ -3,14 +3,14 @@ name: Run Cypress Tests
 on:
   push:
     branches:
-      - master  # This workflow is triggered on push to the 'main' branch
+      - master  # This workflow is triggered on push to the 'master' branch
   pull_request:
     branches:
-      - master  # This workflow is triggered on pull requests to the 'main' branch
+      - master  # This workflow is triggered on pull requests to the 'master' branch
 
 jobs:
   cypress-tests:
-    runs-on: windows-latest  # This job runs on the latest Ubuntu
+    runs-on: windows-latest  # This job runs on the latest Windows
 
     steps:
       # Step 1: Checkout code from the repository
@@ -27,6 +27,15 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install dependencies listed in package.json
 
-      # Step 4: Run Cypress tests
+      # Step 4: Cache Cypress binary
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        with:
+          path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
+      # Step 5: Run Cypress tests
       - name: Run Cypress tests
         run: npx cypress run  # Run Cypress tests using 'npx'
