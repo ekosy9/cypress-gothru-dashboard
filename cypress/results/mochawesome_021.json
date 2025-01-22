@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-22T14:19:31.705Z",
+    "end": "2025-01-22T14:20:46.839Z",
+    "duration": 75134,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "61a83246-5e3a-48db-a192-ff63f33929eb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\starter-page\\select-language.cy.js",
+      "file": "cypress\\e2e\\integration\\starter-page\\select-language.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a1b2baba-8aeb-47d0-9c31-aa0c6659f077",
+          "title": "Feature Select Language",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Change Language to Italiano and English",
+              "fullTitle": "Feature Select Language Change Language to Italiano and English",
+              "timedOut": null,
+              "duration": 72680,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('img[src*=\"https://app.gothru.co/images/flag/en.png\"]').first().click();\ncy.contains('button', 'Italiano').click();\ncy.contains('button', 'Fare domanda a').click();\ncy.get('img[src*=\"https://app.gothru.co/images/flag/it.png\"]').first().click();\ncy.contains('button', 'English').click();\ncy.contains('button', 'Apply').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `img[src*=\"https://app.gothru.co/images/flag/en.png\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `img[src*=\"https://app.gothru.co/images/flag/en.png\"]`, but never found it.\n    at Context.eval (webpack://cypress/./cypress/e2e/integration/starter-page/select-language.cy.js:9:7)",
+                "diff": null
+              },
+              "uuid": "e8a6d361-a219-4bab-93b8-1ab4abc40369",
+              "parentUUID": "a1b2baba-8aeb-47d0-9c31-aa0c6659f077",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e8a6d361-a219-4bab-93b8-1ab4abc40369"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 72680,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

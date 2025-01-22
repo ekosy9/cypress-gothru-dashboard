@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-01-22T13:57:06.221Z",
+    "end": "2025-01-22T13:58:10.652Z",
+    "duration": 64431,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c4b64304-f260-48f9-997b-7661d05614f4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\authentication\\login.cy.js",
+      "file": "cypress\\e2e\\integration\\authentication\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "70eafe68-1ff8-4932-97a0-ac49c0bffdca",
+          "title": "Feature Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Main Function",
+              "fullTitle": "Feature Login Main Function",
+              "timedOut": null,
+              "duration": 60312,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://app.gothru.co');\ncy.get('input[placeholder=\"Enter email\"]').type('testergothru@gmail.com');\ncy.get('input[placeholder=\"Enter password\"]').type('GoThru@123');\ncy.contains('button', 'Log In').click();",
+              "err": {
+                "message": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `60000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `60000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://app.gothru.co/__cypress/runner/cypress_runner.js:130639:64)\n    at <unknown> (https://app.gothru.co/__cypress/runner/cypress_runner.js:131624:16)\n    at tryCatcher (https://app.gothru.co/__cypress/runner/cypress_runner.js:1830:23)\n    at <unknown> (https://app.gothru.co/__cypress/runner/cypress_runner.js:4209:41)\n    at tryCatcher (https://app.gothru.co/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://app.gothru.co/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://app.gothru.co/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://app.gothru.co/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://app.gothru.co/__cypress/runner/cypress_runner.js:1720:18)\n    at _drainQueueStep (https://app.gothru.co/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://app.gothru.co/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://app.gothru.co/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://app.gothru.co/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress/./cypress/e2e/integration/authentication/login.cy.js:3:7)",
+                "diff": null
+              },
+              "uuid": "ecb79e08-1343-43a4-a28d-462f87ac4836",
+              "parentUUID": "70eafe68-1ff8-4932-97a0-ac49c0bffdca",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ecb79e08-1343-43a4-a28d-462f87ac4836"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 60312,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

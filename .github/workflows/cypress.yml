@@ -31,7 +31,7 @@ jobs:
       - name: Cache Cypress binary
         uses: actions/cache@v2
         with:
-          path: C:\Users\runneradmin\AppData\Local\Cypress\Cache
+          path: C:\Users\Aliyawan Aris\AppData\Local\Cypress\Cache
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-cypress-
