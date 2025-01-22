@@ -27,7 +27,11 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install dependencies listed in package.json
 
-      # Step 4: Cache Cypress binary
+      # Step 4: Install cypress
+      - name: Install Cypress
+        run: npx cypress install
+
+      # Step 5: Cache Cypress binary
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
@@ -36,6 +40,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
-      # Step 5: Run Cypress tests
+      # Step 6: Run Cypress tests
       - name: Run Cypress tests
         run: npx cypress run  # Run Cypress tests using 'npx'
