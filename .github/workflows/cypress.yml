@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install dependencies listed in package.json
 
-      # Step 4: Install cypress
+      # Step 4: Install Cypress
       - name: Install Cypress
         run: npx cypress install
 
@@ -35,7 +35,7 @@ jobs:
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
-          path: C:\Users\Aliyawan Aris\AppData\Local\Cypress\Cache
+          path: ${{ env.HOME }}\AppData\Local\Cypress\Cache  # Fixed indentation
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-cypress-
