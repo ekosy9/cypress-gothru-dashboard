@@ -40,6 +40,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
-      # Step 6: Run Cypress tests
-      - name: Run Cypress tests
-        run: npx cypress run  # Run Cypress tests using 'npx'
+      # Step 6: Run Cypress tests (specific spec)
+      - name: GoThru Dashboard Cypress tests
+        run: npx cypress run --spec "cypress/e2e/integration/authentication/login.cy.js"
