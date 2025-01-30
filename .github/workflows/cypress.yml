@@ -42,7 +42,7 @@ jobs:
         run: npm install mochawesome mochawesome-merge mochawesome-report-generator --save-dev
 
       # Step 6: Run Cypress tests
-      - name: Run Cypress tests with Mochawesome
+      - name: Run Cypress tests
         run: npx cypress run
 
       # Step 7: Upload Cypress test results (HTML)
