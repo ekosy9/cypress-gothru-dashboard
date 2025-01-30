@@ -42,7 +42,7 @@ jobs:
 
       # Step 6: Run Cypress tests
       - name: Run Cypress tests
-        shell: cmd
+        shell: pwsh
         run: npx cypress run
 
       # Step 7: Upload Cypress test results (HTML)
