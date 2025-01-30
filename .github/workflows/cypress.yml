@@ -28,7 +28,7 @@ jobs:
         run: npm install  # Install dependencies listed in package.json
 
       # step 4: Cache Cypress binary
-        - name: Cache Cypress binary
+      - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
           path: ${{ runner.os == 'Windows' && format('%USERPROFILE%\\AppData\\Local\\Cypress\\Cache', '') }}
