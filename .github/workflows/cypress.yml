@@ -31,7 +31,7 @@ jobs:
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
-          path: C:\Users\Aliyawan Aris\AppData\Local\Cypress\Cache\13.17.0  # Correct path for Windows
+          path: C:\Users\Aliyawan Aris\AppData\Local\Cypress\Cache\13.17.0\cypress  # Correct path for Windows
           key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-cypress-
@@ -42,6 +42,7 @@ jobs:
 
       # Step 6: Run Cypress tests
       - name: Run Cypress tests
+        shell: cmd
         run: npx cypress run
 
       # Step 7: Upload Cypress test results (HTML)
