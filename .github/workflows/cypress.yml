@@ -9,7 +9,7 @@ on:
       - master  # This workflow is triggered on pull requests to the 'master' branch
 
 jobs:
-  gothru-dashboardcypress-tests:
+  gothru-dashboard-cypress-tests:
     runs-on: windows-latest  # This job runs on the latest Windows
 
     steps:
