@@ -42,7 +42,8 @@ jobs:
 
       # Step 6: Run Cypress tests (specific spec)
       - name: GoThru Dashboard Cypress tests
-        run: npx cypress run --spec "cypress/e2e/integration/authentication/login.cy.js"
+        run: npx cypress run 
+      #--spec "cypress/e2e/integration/authentication/login.cy.js"
 
       # Step 8: Upload video of test results
       - name: Upload video of test results
@@ -50,4 +51,12 @@ jobs:
         if: always()
         with:
           name: cypress-videos
-          path: cypress/gothru-dashboard/cypress/videos
+          path: cypress/videos
+
+      # Step 9: Upload test results
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: cypress-reports
+          path: cypress/screenshots
