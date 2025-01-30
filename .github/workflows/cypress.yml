@@ -27,11 +27,29 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install dependencies listed in package.json
 
-      # Step 4: Install Cypress
-      - name: Install Cypress
-        run: npx cypress install
+      # Step 4: Install Cypress and mochaawesome
+      - name: Install Cypress and mochaawesome
+        run: npm install mochawesome mochawesome-merge mochawesome-report-generator --save-dev
 
-      # Step 5: Cache Cypress binary
+      # Step 5: Run Cypress tests
+      - name: Run Cypress tests with Mochawesome
+        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
+
+      # Step 6: Upload Cypress test results
+      - name: Upload Cypress test results (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-html-report
+          path: cypress/results/*.html
+
+      # step 7: Upload Cypress test results
+      - name: Upload Cypress test results (JSON)
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-json-report
+          path: cypress/results/*.json
+
+      # Step 8: Cache Cypress binary
       - name: Cache Cypress binary
         uses: actions/cache@v3
         with:
@@ -40,12 +58,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cypress-
 
-      # Step 6: Run Cypress tests (specific spec)
+      # Step 9: Run Cypress tests (specific spec)
       - name: GoThru Dashboard Cypress tests
         run: npx cypress run 
       #--spec "cypress/e2e/integration/authentication/login.cy.js"
 
-      # Step 8: Upload video of test results
+      # Step 10: Upload video of test results
       - name: Upload video of test results
         uses: actions/upload-artifact@v4
         if: always()
@@ -53,7 +71,7 @@ jobs:
           name: cypress-videos
           path: cypress/videos
 
-      # Step 9: Upload test results
+      # Step 11: Upload test results
       - name: Upload test results
         uses: actions/upload-artifact@v4
         if: always()
