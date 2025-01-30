@@ -27,54 +27,49 @@ jobs:
       - name: Install dependencies
         run: npm install  # Install dependencies listed in package.json
 
-      # Step 4: Install Cypress and mochaawesome
-      - name: Install Cypress and mochaawesome
+      # Step 4: Cache Cypress binary
+      - name: Cache Cypress binary
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.HOME }}\AppData\Local\Cypress\Cache  # Fixed path to Cypress binary
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-cypress-
+
+      # Step 5: Install Cypress and Mochawesome
+      - name: Install Cypress and Mochawesome
         run: npm install mochawesome mochawesome-merge mochawesome-report-generator --save-dev
 
-      # Step 5: Run Cypress tests
+      # Step 6: Run Cypress tests with Mochawesome reporter
       - name: Run Cypress tests with Mochawesome
         run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
 
-      # Step 6: Upload Cypress test results
+      # Step 7: Upload Cypress test results (HTML)
       - name: Upload Cypress test results (HTML)
         uses: actions/upload-artifact@v4
         with:
           name: cypress-html-report
           path: cypress/results/*.html
 
-      # step 7: Upload Cypress test results
+      # Step 8: Upload Cypress test results (JSON)
       - name: Upload Cypress test results (JSON)
         uses: actions/upload-artifact@v4
         with:
           name: cypress-json-report
           path: cypress/results/*.json
 
-      # Step 8: Cache Cypress binary
-      - name: Cache Cypress binary
-        uses: actions/cache@v3
-        with:
-          path: ${{ env.HOME }}\AppData\Local\Cypress\Cache  # Fixed indentation
-          key: ${{ runner.os }}-cypress-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-cypress-
-
-      # Step 9: Run Cypress tests (specific spec)
-      - name: GoThru Dashboard Cypress tests
-        run: npx cypress run 
-      #--spec "cypress/e2e/integration/authentication/login.cy.js"
-
-      # Step 10: Upload video of test results
+      # Step 9: Upload video of test results
       - name: Upload video of test results
         uses: actions/upload-artifact@v4
-        if: always()
+        if: always()  # Ensure video is uploaded even if the tests fail
         with:
           name: cypress-videos
           path: cypress/videos
 
-      # Step 11: Upload test results
-      - name: Upload test results
+      # Step 10: Upload screenshots (if any)
+      - name: Upload screenshots
         uses: actions/upload-artifact@v4
-        if: always()
+        if: always()  # Ensure screenshots are uploaded even if the tests fail
         with:
-          name: cypress-reports
+          name: cypress-screenshots
           path: cypress/screenshots
