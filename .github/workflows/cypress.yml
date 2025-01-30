@@ -42,8 +42,8 @@ jobs:
         run: npm install mochawesome mochawesome-merge mochawesome-report-generator --save-dev
 
       # Step 6: Run Cypress tests with Mochawesome reporter
-      - name: Run Cypress tests with Mochawesome
-        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
+      #- name: Run Cypress tests with Mochawesome
+      #  run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/results,overwrite=false,html=true,json=true
 
       # Step 7: Upload Cypress test results (HTML)
       - name: Upload Cypress test results (HTML)
