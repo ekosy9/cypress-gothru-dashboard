@@ -46,7 +46,7 @@ jobs:
 
       # Step 7: Run Cypress tests
       - name: Run Cypress tests
-        run: npx cypress run
+        run: npx cypress run --browser chrome --headless
 
       # Step 8: Upload Cypress test results (HTML)
       - name: Upload Cypress test results (HTML)
