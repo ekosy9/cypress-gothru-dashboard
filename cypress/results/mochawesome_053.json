@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-01T02:33:32.663Z",
+    "end": "2025-02-01T02:33:56.958Z",
+    "duration": 24295,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db55e826-cac4-4ce9-80ce-1aeb9f44d4f2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\authentication\\logout.cy.js",
+      "file": "cypress\\e2e\\integration\\authentication\\logout.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a368809a-0736-4832-b835-94a4b4155d15",
+          "title": "Feature Logout",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should logout successfully and redirect to Homepage",
+              "fullTitle": "Feature Logout should logout successfully and redirect to Homepage",
+              "timedOut": null,
+              "duration": 20776,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('button').find('img[alt=\"avatar\"]', {\n  timeout: 120000\n}).click();\ncy.contains('Log Out', {\n  timeout: 120000\n}).should('be.visible').click();\ncy.url().should('eq', 'https://app.gothru.co/auth');",
+              "err": {},
+              "uuid": "8f640f79-667a-4cd5-a697-b1986141d086",
+              "parentUUID": "a368809a-0736-4832-b835-94a4b4155d15",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8f640f79-667a-4cd5-a697-b1986141d086"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 20776,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

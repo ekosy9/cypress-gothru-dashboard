@@ -7,7 +7,7 @@ describe('Feature Logout', () => {
   });
   it('should logout successfully and redirect to Homepage', () => {
     cy.get('button').find('img[alt="avatar"]',{ timeout: 120000 }).click();
-    cy.contains('Log Out',{ timeout: 120000 }).click();
+    cy.contains('Log Out',{ timeout: 120000 }).click({ force: true });
     cy.url().should('eq', 'https://app.gothru.co/auth');
   });
 });

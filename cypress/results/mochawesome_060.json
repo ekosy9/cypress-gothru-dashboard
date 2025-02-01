@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-02-01T02:42:25.696Z",
+    "end": "2025-02-01T02:44:38.188Z",
+    "duration": 132492,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "75cddaed-fff1-4227-9b3e-9ab0dd815508",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\starter-page\\select-language.cy.js",
+      "file": "cypress\\e2e\\integration\\starter-page\\select-language.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b737086d-8095-49ed-9a1d-502744232922",
+          "title": "Feature Select Language",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Change Language to Italiano and English",
+              "fullTitle": "Feature Select Language Change Language to Italiano and English",
+              "timedOut": null,
+              "duration": 129925,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('img[src*=\"https://app.gothru.co/images/flag/en.webp\"]', {\n  timeout: 120000\n}).first().click();\ncy.contains('button', 'Italiano', {\n  timeout: 120000\n}).click();\ncy.contains('button', 'Fare domanda a', {\n  timeout: 120000\n}).should('be.visible').click();\ncy.get('img[src*=\"https://app.gothru.co/images/flag/it.webp\"]', {\n  timeout: 120000\n}).first().click();\ncy.contains('button', 'English', {\n  timeout: 120000\n}).click();\ncy.contains('button', 'Apply', {\n  timeout: 120000\n}).should('be.visible').click();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 120000ms: Expected to find content: 'English' within the selector: 'button' but never did.",
+                "estack": "AssertionError: Timed out retrying after 120000ms: Expected to find content: 'English' within the selector: 'button' but never did.\n    at Context.eval (webpack://cypress/./cypress/e2e/integration/starter-page/select-language.cy.js:13:7)",
+                "diff": null
+              },
+              "uuid": "cf962c45-ef5f-4d3b-b575-054d95067acd",
+              "parentUUID": "b737086d-8095-49ed-9a1d-502744232922",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cf962c45-ef5f-4d3b-b575-054d95067acd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 129925,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

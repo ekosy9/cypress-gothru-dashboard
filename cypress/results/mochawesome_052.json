@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-02-01T02:33:07.251Z",
+    "end": "2025-02-01T02:33:24.343Z",
+    "duration": 17092,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "404654f9-302f-40fc-ac9c-957734fd41cd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\integration\\authentication\\login.cy.js",
+      "file": "cypress\\e2e\\integration\\authentication\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2122293f-f968-4e4e-8a67-117509215b61",
+          "title": "Feature Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Main Function",
+              "fullTitle": "Feature Login Main Function",
+              "timedOut": null,
+              "duration": 13362,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://app.gothru.co');\ncy.get('input[placeholder=\"Enter email\"]', {\n  timeout: 60000\n}).type('testergothru@gmail.com');\ncy.get('input[placeholder=\"Enter password\"]', {\n  timeout: 60000\n}).type('GoThru@12345');\ncy.contains('button', 'Log In').click();",
+              "err": {},
+              "uuid": "605b4ed9-9d40-4b77-a726-80a61ae674b8",
+              "parentUUID": "2122293f-f968-4e4e-8a67-117509215b61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "605b4ed9-9d40-4b77-a726-80a61ae674b8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 13362,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
